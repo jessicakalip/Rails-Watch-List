@@ -1,0 +1,16 @@
+<div class="banner">
+  <h1>Save a movie to your list</h1>
+  <h2>You are on the <%= @list.name %> List</h2>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 py-5">
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.association :movie %>
+        <%= f.input :comment %>
+        <%= f.button :submit, class: 'btn btn-success' %>
+      <% end %>
+    </div>
+  </div>
+</div>
