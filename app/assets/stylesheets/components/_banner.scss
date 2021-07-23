@@ -13,4 +13,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.show-page {
+    background-image: linear-gradient(
+      354deg,
+      rgba(0, 0, 0, 0.1474964985994398) 0%,
+      rgba(2, 0, 36, 0.5340511204481793) 100%,
+      rgba(0, 212, 255, 1) 100%
+    );
+  }
 }
