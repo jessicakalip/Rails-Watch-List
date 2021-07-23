@@ -1,0 +1,14 @@
+<div class="banner">
+  <h1>Create a New Review for <%= @list.name %> List </h1>
+</div>
+
+<div class="container py-5">
+  <div class="row">
+    <div class="col-6">
+      <%= simple_form_for [@list, @review] do |f| %>
+        <%= f.input :content %>
+        <%= f.button :submit, class: 'btn btn-success'%>
+      <% end %>
+    </div>
+  </div>
+</div>

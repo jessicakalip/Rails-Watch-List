@@ -2,13 +2,21 @@
   <h1>View Movies in the <%= @list.name %> List </h1>
 </div>
 
-<div class="container py-5">
-  <div class="row justify-content-end">
-    <%= link_to "Add a Movie", new_list_bookmark_path(@list), class: 'btn btn-success' %>
+<div class="container py-2">
+  <div class="row align-items-end flex-column">
+    <%= link_to "Add a Movie", new_list_bookmark_path(@list), class: 'btn btn-success m-1 add-button' %>
+    <%= link_to "Add a Review", new_list_review_path(@list), class: 'btn btn-primary m-1 add-button' %>
+  </div>
+  <div class="row">
+    <% @list.reviews.each do |review| %>
+      <div class="col-6">
+      <h3><%= review.content %></h3>
+      </div>
+    <% end %>
   </div>
   <div class="row py-5">
   <% @list.bookmarks.each do |bookmark| %>
-    <div class="col-6 movie-card">
+    <div class="col-3 movie-card m-2">
       <%= image_tag bookmark.movie.poster_url %>
       <div class="content">
         <h2 class="py-3"><%= bookmark.movie.title %> . <%= bookmark.movie.rating %> . <i class="fas fa-star"></i></h2> 
